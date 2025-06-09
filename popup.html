@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offload Todo-List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Offload Todo-List</h1>
+            <p>Simple. Beautiful. Distraction-free.</p>
+        </div>
+
+        <div class="controls">
+            <div class="input-group">
+                <input type="text" id="taskInput" class="input-field" placeholder="What needs to be done?">
+                <input type="text" id="projectInput" class="input-field" placeholder="Project (optional)">
+                <input type="text" id="tagsInput" class="input-field" placeholder="Tags (comma-separated)">
+                <button id="addBtn" class="btn btn-primary">
+                    <span>+</span> Add Task
+                </button>
+            </div>
+            
+            <div class="filters">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Done</button>
+                </div>
+                <select id="projectFilter" class="input-field">
+                    <option value="">All Projects</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="tasks" id="tasksContainer">
+            <div class="empty-state">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                </svg>
+                <h3>Your mind is clear</h3>
+                <p>Add your first task to get started on your journey to productivity.</p>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number" id="totalTasks">0</span>
+                <span class="stat-label">Total</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="activeTasks">0</span>
+                <span class="stat-label">Active</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="completedTasks">0</span>
+                <span class="stat-label">Completed</span>
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
