@@ -8,5 +8,8 @@
         "default_icon": {
             "16": "icon.png"
         }
-    }
+    },
+    "permissions": [
+        "storage"
+    ]
 }

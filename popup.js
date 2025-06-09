@@ -1,11 +1,13 @@
-class ZenTasks {
+class OffloadTodoList {
   constructor() {
-      this.tasks = this.loadTasks();
-      this.currentFilter = 'all';
-      this.currentProject = '';
-      this.initializeElements();
-      this.bindEvents();
-      this.render();
+      this.loadTasks().then(tasks => {
+          this.tasks = tasks;
+          this.currentFilter = 'all';
+          this.currentProject = '';
+          this.initializeElements();
+          this.bindEvents();
+          this.render();
+      });
   }
 
   initializeElements() {
@@ -218,22 +220,34 @@ class ZenTasks {
 
   saveTasks() {
       try {
-          localStorage.setItem('zenTasks', JSON.stringify(this.tasks));
+          chrome.storage.sync.set({ 'OffloadTodoList': this.tasks }, () => {
+              if (chrome.runtime.lastError) {
+                  console.warn('Could not save tasks:', chrome.runtime.lastError);
+              }
+          });
       } catch (e) {
           console.warn('Could not save tasks:', e);
       }
   }
 
   loadTasks() {
-      try {
-          const data = localStorage.getItem('zenTasks');
-          return data ? JSON.parse(data) : [];
-      } catch (e) {
-          console.warn('Could not load tasks:', e);
-          return [];
-      }
+      return new Promise((resolve) => {
+          try {
+              chrome.storage.sync.get(['OffloadTodoList'], (result) => {
+                  if (chrome.runtime.lastError) {
+                      console.warn('Could not load tasks:', chrome.runtime.lastError);
+                      resolve([]);
+                  } else {
+                      resolve(result.OffloadTodoList || []);
+                  }
+              });
+          } catch (e) {
+              console.warn('Could not load tasks:', e);
+              resolve([]);
+          }
+      });
   }
 }
 
 // Initialize the app
-const app = new ZenTasks();
+const app = new OffloadTodoList();
