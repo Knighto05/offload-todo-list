@@ -28,6 +28,14 @@ Spend less time organizing and more time doing.
 
 ---
 
+## 🖼️ Demo
+
+![Screenshot from 2025-06-10 00-04-36](https://github.com/user-attachments/assets/6f9864ac-fc63-4e33-9728-ff75d3f4b46e)
+
+
+
+---
+
 ## 🛠️ Get Started
 
 Install from the [Chrome Web Store](#)  
