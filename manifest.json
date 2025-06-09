@@ -8,21 +8,5 @@
         "default_icon": {
             "16": "icon.png"
         }
-    },
-    "background": {
-        "service_worker": "background.js"
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "<all_urls>"
-            ],
-            "js": [
-                "content.js"
-            ],
-            "css": [
-                "styles.css"
-            ]
-        }
-    ]
+    }
 }
