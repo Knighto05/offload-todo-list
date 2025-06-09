@@ -34,7 +34,7 @@ Install from the [Chrome Web Store](#)
 Or clone and run locally from source:
 
 ```bash
-git clone https://github.com/your-username/offload-todo-list.git
+git clone https://github.com/Knighto05/offload-todo-list.git
 ```
 Then open `chrome://extensions`, enable **Developer mode**, and click **“Load unpacked”** to load the folder.
 
