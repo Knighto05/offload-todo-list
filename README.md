@@ -38,7 +38,7 @@ Spend less time organizing and more time doing.
 
 ## 🛠️ Get Started
 
-Install from the [Chrome Web Store](#)  
+Install from the [Chrome Web Store](https://chromewebstore.google.com/detail/offload-todo/bjldbaccinimhebkbhlafjbacejeegmc)  
 Or clone and run locally from source:
 
 ```bash
